@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <header><h1>{{title}}</h1></header>
+            <form class="form">
+                <div class="input-group mb3">
+                    <input type="text" class="form-control" placeholder="Add task" id="itemForm">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" v-on:click="addItem" type="button">Add</button>
+                    </div>
+                    <table class="table table-striped table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    Tasks
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in tasks">
+                                <th scope="row">{{item.text}} <button @click="deleteItem(item)" style="float: right;" type="button" class="btn btn-danger">Delete</button></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
