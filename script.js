@@ -3,21 +3,23 @@ var app = new Vue ({
     data: {
         title:"ToDo List",
         tasks: [
-            {text: "First"},
-            {text: "Second"},
-            {text: "Third"},
-            {text: "Fourth"},
-            {text: "Fifth"}
+            {text: "First",date: "23:01:2020 19:18"},
+            {text: "Second",date: "21:01:2020 11:37"},
+            {text: "Third",date: "18:01:2020 13:32"},
+            {text: "Fourth",date: "17:01:2020 15:12"},
+            {text: "Fifth",date: "15:01:2020 08:38"}
         ]
     },
     methods: {
         addItem: function() {
             let input = document.getElementById('itemForm');
-            if(input.value !== '') {
+            let inputDate = document.getElementById('itemDateForm');
+            if(input.value !== '' && inputDate.value !== '') {
                 this.tasks.push({
-                    text:input.value
+                    text:input.value,date:inputDate.value
                 })
                 input.value = "";
+                inputDate.value = "";
             }
         },
         deleteItem: function(item) {

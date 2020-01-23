@@ -17,6 +17,7 @@
             <form class="form">
                 <div class="input-group mb3">
                     <input type="text" class="form-control" placeholder="Add task" id="itemForm">
+                    <input type="text" class="form-control" placeholder="Add date task" id="itemDateForm">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" v-on:click="addItem" type="button">Add</button>
                     </div>
@@ -30,7 +31,7 @@
                         </thead>
                         <tbody>
                             <tr v-for="item in tasks">
-                                <th scope="row">{{item.text}} <button @click="deleteItem(item)" style="float: right;" type="button" class="btn btn-danger">Delete</button></th>
+                                <th scope="row">Date:{{item.date}} Task name:{{item.text}} <button @click="deleteItem(item)" style="float: right;" type="button" class="btn btn-danger">Delete</button></th>
                             </tr>
                         </tbody>
                     </table>
